@@ -5,7 +5,9 @@ const Ware = () => {
 
     return (
         <>
-            <h1></h1>
+            <h1 className="te">
+                Hello world!
+            </h1>
         </>
     )
 }
