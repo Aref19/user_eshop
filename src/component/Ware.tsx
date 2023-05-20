@@ -6,6 +6,8 @@ import { useAppDispatch, useAppSelector } from '../hook/toolkit'
 import { producktFeatch } from '../slice/Produckt'
 import { produckts } from '../slice/Produckt'
 import Card from "./Card";
+import Load from '../component/Load'
+
 
 const Ware = () => {
 
@@ -14,19 +16,27 @@ const Ware = () => {
 
     useEffect(() => {
         dispatch(producktFeatch());
-        console.log(ProductData[0].price);
+
 
     }, [dispatch]);
 
 
     return (
-        <div>
-            <div className={"flex relative top-10  flex-wrap bg-black"}>
-                {ProductData.map((item) => {
-                    return <Card producktData={item} />
-                })}
-            </div>
-        </div>
+        <>
+            {ProductData.length === 0 ? (
+                <Load />
+            ) : (
+                <div>
+                      
+                    <div className="flex relative top-10 flex-wrap  transition-all">
+                        {ProductData.map((item) => {
+                            return <Card producktData={item} />;
+                        })}
+                    </div>
+                </div>
+            )}
+        </>
+
 
     );
 }

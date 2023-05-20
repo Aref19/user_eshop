@@ -1,17 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
-import Load from './component/Load'
-import Ware from './component/Ware'; 
 import Navbar from './component/Navbar';
+import Connection from './component/Connication';
+import {
+  Router,
+  Outlet,
+  Link
+} from 'react-location';
+import { routes } from './router/Router'
+import { ReactLocation } from 'react-location';
+
+
+const location = new ReactLocation();
+
 
 function App() {
+
   return (
     <div className="App">
-     <Navbar/>
 
-     <Ware/>
+      <Router
+        location={location}
+        routes={routes}
+      >
+        <Navbar />
+        <Outlet />
+        <Connection />
+      </Router>
+
     </div>
   );
 }
 
 export default App;
+
