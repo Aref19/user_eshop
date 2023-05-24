@@ -5,7 +5,7 @@ import { intiaxio } from "../api/produckt";
 
 export const producktFeatch = createAsyncThunk("producktsSlice/fetchProduckt", async () => {
 
-    const res = await intiaxio.get("endUser/getAllItem", { params: { page: 0, size: 3 } }) 
+    const res = await intiaxio.get("endUser/getAllItem", { params: { page: 0, size: 6 } }) 
     const data = res.data.content;
     return data;
 })

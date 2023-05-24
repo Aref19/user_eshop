@@ -5,6 +5,7 @@ import Reg from '../component/Regestieren';
 import Log from '../component/Login';
 import Load from '../component/Load';
 
+
 import { Router, Route } from 'react-location';
 
 
@@ -30,6 +31,14 @@ export const routes: Route[] = [
   },
   {
     path: "/log",
+    element: <Log />
+  },
+  {
+    path: "/account",
+    element: <Account />
+  },
+  {
+    path: "/wareCorp",
     element: <Log />
   }
 ];

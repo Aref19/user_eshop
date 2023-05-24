@@ -28,7 +28,7 @@ const Ware = () => {
             ) : (
                 <div>
                       
-                    <div className="flex relative top-10 flex-wrap  transition-all">
+                    <div className="flex relative top-10 flex-wrap  mt-10 transition-all">
                         {ProductData.map((item) => {
                             return <Card producktData={item} />;
                         })}

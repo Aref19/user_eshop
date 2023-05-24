@@ -8,6 +8,7 @@ import {
 } from 'react-location';
 import { routes } from './router/Router'
 import { ReactLocation } from 'react-location';
+import PersisttLogin from './component/PersistLogin';
 
 
 const location = new ReactLocation();
@@ -18,12 +19,12 @@ function App() {
   return (
     <div className="App">
 
-      <Router
+      <Router 
         location={location}
         routes={routes}
       >
         <Navbar />
-        <Outlet />
+        <PersisttLogin />
         <Connection />
       </Router>
 
